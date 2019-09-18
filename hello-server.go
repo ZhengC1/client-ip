@@ -4,6 +4,11 @@ import (
   "strings"
 )
 
+// this code from 
+// https://hackernoon.com/how-to-create-a-web-server-in-go-a064277287c9
+
+// https://tutorialedge.net/golang/creating-simple-web-server-with-golang/
+
 func sayHello(w http.ResponseWriter, r *http.Request) {
   message := r.URL.Path
   message = strings.TrimPrefix(message, "/")
