@@ -1,10 +1,16 @@
-FROM golang:alpine
+FROM golang:latest
 
-ADD ./src client_ip/src/app
+# Set the Current Working Directory inside the container
+WORKDIR /app
 
-WORKDIR /go/src/app
+# Copy the source from the current directory to the Working Directory inside the container
+COPY . .
 
-ENV PORT=3001
+# Build the Go app
+RUN go build -o client_app ./client_ip/src/app/
 
-CMD ["go", "run", "check_ip.go"]
+# Expose port 8080 to the outside world
+EXPOSE 8080
 
+# Command to run the executable
+CMD ["./client_app"]
