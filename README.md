@@ -8,10 +8,14 @@ https://golang.org/doc/install
 go run src/app/client_ip.go
 ```
 # run locally
+```
 go build client_ip/src/app/client_ip.go
+```
 
 # build and run docker
+```
 bash run.sh
+```
 
 
 # debugging 
